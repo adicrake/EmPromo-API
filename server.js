@@ -1,7 +1,12 @@
 const express = require("express");
 const fs = require("fs");
+const cors = require("cors"); // <-- Importa CORS
+
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Ativa CORS (permite que o frontend acesse a API)
+app.use(cors());
 
 // Endpoint inicial
 app.get("/", (req, res) => {
