@@ -1,16 +1,13 @@
 {
   "name": "empromo-api",
   "version": "1.0.0",
-  "private": true,
+  "description": "API do EmPromo para listar promoções",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "dayjs": "^1.11.13",
-    "express": "^4.19.2",
-    "nanoid": "^5.0.7"
+    "express": "^4.18.2"
   }
 }
