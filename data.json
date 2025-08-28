@@ -1,33 +1,24 @@
-{
-  "promotions": [
-    {
-      "id": "seed1",
-      "title": "Rel\u00f3gio Cl\u00e1ssico",
-      "description": "Rel\u00f3gio elegante com 30% de desconto.",
-      "imageUrl": "https://via.placeholder.com/800x500.png?text=Relogio+Classico",
-      "shopName": "Loja Tempo",
-      "shopPhone": "+244 923 000 000",
-      "shopLink": "https://example.com/relogio",
-      "endsAt": "2025-08-27T23:59:00Z",
-      "paid": true,
-      "paused": false,
-      "createdAt": "2025-08-26T22:22:47Z"
-    },
-    {
-      "id": "seed2",
-      "title": "Mochila Eco",
-      "description": "Feita com materiais recicl\u00e1veis. 15% OFF.",
-      "imageUrl": "https://via.placeholder.com/800x500.png?text=Mochila+Eco",
-      "shopName": "Verde & Cia",
-      "shopPhone": "+244 922 111 222",
-      "shopLink": "https://example.com/mochila",
-      "endsAt": "2025-08-27T23:59:00Z",
-      "paid": false,
-      "paused": false,
-      "createdAt": "2025-08-26T22:22:47Z"
-    }
-  ],
-  "clicks": [],
-  "comments": [],
-  "createdAt": "2025-08-26T22:22:47Z"
-}
+[
+  {
+    "id": 1,
+    "nome": "Smartphone X200",
+    "loja": "Loja Tech",
+    "link": "https://lojatech.com/produto/x200",
+    "telefone": "+244 923 456 789",
+    "imagem": "https://via.placeholder.com/300x200.png?text=Smartphone+X200",
+    "precoMedio": 150000,
+    "precoPromocao": 120000,
+    "fimPromocao": "2025-08-30T23:59:59Z"
+  },
+  {
+    "id": 2,
+    "nome": "Fone Bluetooth Pro",
+    "loja": "Eletrônicos Angola",
+    "link": "https://eletronicosao.com/produto/fone-pro",
+    "telefone": "+244 912 345 678",
+    "imagem": "https://via.placeholder.com/300x200.png?text=Fone+Pro",
+    "precoMedio": 25000,
+    "precoPromocao": 18000,
+    "fimPromocao": "2025-08-28T23:59:59Z"
+  }
+]
