@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "Tênis Nike Air",
+    "descricao": "Tênis esportivo confortável, ideal para corrida",
+    "precoMedio": 500,
+    "precoPromocao": 350,
+    "loja": "Loja Esportes X",
+    "link": "https://loja.com/produto1",
+    "telefone": "+244900000001",
+    "tempoRestante": "2025-08-30T23:59:59"
+  },
+  {
+    "nome": "Televisão LG 55''",
+    "descricao": "Smart TV 4K UHD com HDR",
+    "precoMedio": 450000,
+    "precoPromocao": 350000,
+    "loja": "Loja Eletrônicos Y",
+    "link": "https://loja.com/produto2",
+    "telefone": "+244900000002",
+    "tempoRestante": "2025-08-29T23:59:59"
+  },
+  {
+    "nome": "iPhone 14",
+    "descricao": "128GB, Azul, com 1 ano de garantia",
+    "precoMedio": 850000,
+    "precoPromocao": 720000,
+    "loja": "Loja Tech Z",
+    "link": "https://loja.com/produto3",
+    "telefone": "+244900000003",
+    "tempoRestante": "2025-08-28T23:59:59"
+  }
+]
