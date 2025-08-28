@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "Tênis Nike",
+    "descricao": "Tênis esportivo confortável",
+    "precoMedio": 500,
+    "precoPromocao": 350,
+    "loja": "Loja X",
+    "link": "https://loja.com/produto1",
+    "telefone": "+244900000000",
+    "tempoRestante": "2025-08-30T23:59:59"
+  },
+  {
+    "nome": "Smartphone Samsung",
+    "descricao": "Tela 6.5 polegadas, 128GB",
+    "precoMedio": 250000,
+    "precoPromocao": 199999,
+    "loja": "Loja Y",
+    "link": "https://loja.com/produto2",
+    "telefone": "+244911111111",
+    "tempoRestante": "2025-09-05T23:59:59"
+  },
+  {
+    "nome": "Fones Bluetooth",
+    "descricao": "Som estéreo, bateria 24h",
+    "precoMedio": 15000,
+    "precoPromocao": 9900,
+    "loja": "Loja Z",
+    "link": "https://loja.com/produto3",
+    "telefone": "+244922222222",
+    "tempoRestante": "2025-09-10T23:59:59"
+  }
+]
