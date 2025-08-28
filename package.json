@@ -2,10 +2,9 @@
   "name": "empromo-api",
   "version": "1.0.0",
   "description": "API do EmPromo para listar promoções",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2"
