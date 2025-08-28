@@ -1,24 +1,12 @@
 [
   {
-    "id": 1,
-    "nome": "Smartphone X200",
-    "loja": "Loja Tech",
-    "link": "https://lojatech.com/produto/x200",
-    "telefone": "+244 923 456 789",
-    "imagem": "https://via.placeholder.com/300x200.png?text=Smartphone+X200",
-    "precoMedio": 150000,
-    "precoPromocao": 120000,
-    "fimPromocao": "2025-08-30T23:59:59Z"
-  },
-  {
-    "id": 2,
-    "nome": "Fone Bluetooth Pro",
-    "loja": "Eletrônicos Angola",
-    "link": "https://eletronicosao.com/produto/fone-pro",
-    "telefone": "+244 912 345 678",
-    "imagem": "https://via.placeholder.com/300x200.png?text=Fone+Pro",
-    "precoMedio": 25000,
-    "precoPromocao": 18000,
-    "fimPromocao": "2025-08-28T23:59:59Z"
+    "nome": "Tênis Nike",
+    "descricao": "Tênis esportivo confortável",
+    "precoMedio": 500,
+    "precoPromocao": 350,
+    "loja": "Loja X",
+    "link": "https://loja.com/produto1",
+    "telefone": "+244 900 000 000",
+    "tempoRestante": "2025-08-30T23:59:59"
   }
 ]
