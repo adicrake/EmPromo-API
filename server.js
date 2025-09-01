@@ -1,12 +1,9 @@
 const express = require("express");
 const fs = require("fs");
-const cors = require("cors"); // <-- Importa CORS
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Ativa CORS (permite que o frontend acesse a API)
-app.use(cors());
+app.use(express.json()); // permite receber JSON
 
 // Endpoint inicial
 app.get("/", (req, res) => {
@@ -25,6 +22,27 @@ app.get("/promocoes", (req, res) => {
     } catch (e) {
       res.status(500).json({ error: "Erro ao processar promoções" });
     }
+  });
+});
+
+// Novo endpoint para adicionar promoção
+app.post("/promocoes", (req, res) => {
+  const novaPromocao = req.body;
+
+  fs.readFile("data.json", "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Erro ao ler promoções" });
+
+    let promocoes = [];
+    try {
+      promocoes = JSON.parse(data);
+    } catch {}
+
+    promocoes.push(novaPromocao);
+
+    fs.writeFile("data.json", JSON.stringify(promocoes, null, 2), (err) => {
+      if (err) return res.status(500).json({ error: "Erro ao salvar promoção" });
+      res.json({ ok: true, message: "Promoção adicionada com sucesso" });
+    });
   });
 });
 
