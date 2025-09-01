@@ -3,7 +3,7 @@ const fs = require("fs");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json()); // Para entender JSON no body
+app.use(express.json()); // permite receber JSON no body
 
 // Endpoint inicial
 app.get("/", (req, res) => {
@@ -17,7 +17,7 @@ app.get("/promocoes", (req, res) => {
       return res.status(500).json({ error: "Erro ao ler promoções" });
     }
     try {
-      const promocoes = data ? JSON.parse(data) : [];
+      const promocoes = JSON.parse(data || "[]");
       res.json(promocoes);
     } catch (e) {
       res.status(500).json({ error: "Erro ao processar promoções" });
@@ -25,27 +25,23 @@ app.get("/promocoes", (req, res) => {
   });
 });
 
-// Endpoint para adicionar nova promoção
+// Endpoint para adicionar promoção
 app.post("/promocoes", (req, res) => {
-  const novaPromocao = req.body;
-
   fs.readFile("data.json", "utf8", (err, data) => {
-    if (err) {
-      return res.status(500).json({ error: "Erro ao ler promoções" });
-    }
+    if (err) return res.status(500).json({ error: "Erro ao ler promoções" });
 
     let promocoes = [];
-    if (data) {
-      promocoes = JSON.parse(data);
+    try {
+      promocoes = JSON.parse(data || "[]");
+    } catch (e) {
+      promocoes = [];
     }
 
-    promocoes.push(novaPromocao);
+    promocoes.push(req.body); // adiciona nova promoção enviada pelo admin
 
     fs.writeFile("data.json", JSON.stringify(promocoes, null, 2), (err) => {
-      if (err) {
-        return res.status(500).json({ error: "Erro ao salvar promoção" });
-      }
-      res.json({ message: "Promoção salva com sucesso!" });
+      if (err) return res.status(500).json({ error: "Erro ao salvar promoção" });
+      res.json({ ok: true, message: "Promoção adicionada com sucesso!" });
     });
   });
 });
