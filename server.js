@@ -1,9 +1,15 @@
 const express = require("express");
 const fs = require("fs");
+const path = require("path");
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json()); // permite receber JSON
+// Middleware para entender JSON
+app.use(express.json());
+
+// Caminho do arquivo de dados
+const DATA_FILE = path.join(__dirname, "data.json");
 
 // Endpoint inicial
 app.get("/", (req, res) => {
@@ -12,7 +18,7 @@ app.get("/", (req, res) => {
 
 // Endpoint para listar promoções
 app.get("/promocoes", (req, res) => {
-  fs.readFile("data.json", "utf8", (err, data) => {
+  fs.readFile(DATA_FILE, "utf8", (err, data) => {
     if (err) {
       return res.status(500).json({ error: "Erro ao ler promoções" });
     }
@@ -25,23 +31,29 @@ app.get("/promocoes", (req, res) => {
   });
 });
 
-// Novo endpoint para adicionar promoção
+// Endpoint para adicionar nova promoção
 app.post("/promocoes", (req, res) => {
   const novaPromocao = req.body;
 
-  fs.readFile("data.json", "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Erro ao ler promoções" });
+  if (!novaPromocao.nome || !novaPromocao.precoMedio || !novaPromocao.precoPromocao) {
+    return res.status(400).json({ error: "Dados incompletos da promoção" });
+  }
 
+  fs.readFile(DATA_FILE, "utf8", (err, data) => {
     let promocoes = [];
-    try {
-      promocoes = JSON.parse(data);
-    } catch {}
+    if (!err) {
+      try {
+        promocoes = JSON.parse(data);
+      } catch {}
+    }
 
     promocoes.push(novaPromocao);
 
-    fs.writeFile("data.json", JSON.stringify(promocoes, null, 2), (err) => {
-      if (err) return res.status(500).json({ error: "Erro ao salvar promoção" });
-      res.json({ ok: true, message: "Promoção adicionada com sucesso" });
+    fs.writeFile(DATA_FILE, JSON.stringify(promocoes, null, 2), (err) => {
+      if (err) {
+        return res.status(500).json({ error: "Erro ao salvar promoção" });
+      }
+      res.status(201).json({ message: "Promoção adicionada com sucesso!" });
     });
   });
 });
